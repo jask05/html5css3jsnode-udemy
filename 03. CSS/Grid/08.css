@@ -1,0 +1,21 @@
+body{
+    background-color: #eee;
+}
+
+.grid{
+    display: grid;
+    grid-template-areas: "header header"
+                         "content sidebar"
+                         "footer footer";
+    grid-template-rows: 150px 1fr 100px;
+    grid-template-columns: 1fr 200px;
+}
+
+.red{
+    background-color:crimson;
+}
+
+.blue{
+    background-color:darkblue;
+    color: white;
+}

@@ -1,0 +1,43 @@
+body{
+    background-color: #eee;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+#box, #box2, #box3{
+    background-color: white;
+    width: 300px;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.25);
+    margin: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.3s;
+    padding: 15px 10px;
+}
+
+#box{
+    border-left: 3px solid red;
+}
+
+#box:hover{
+    transform: scale(1.05, 1.05);
+}
+
+#box2{
+    border-left: 3px solid green;
+}
+
+#box2:hover{
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.40);
+}
+
+#box3{
+    border-left: 3px solid rgba(25, 0, 255, 1);
+}
+
+#box3:hover{
+    background-color: rgba(25, 0, 255, 0.062)
+}
+

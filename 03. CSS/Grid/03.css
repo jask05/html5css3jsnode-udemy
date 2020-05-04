@@ -1,0 +1,14 @@
+body{
+    background-color: #eee;
+}
+
+.grid{
+    display: grid;
+    /* grid-template-rows: 50px 100px; Cada valor equivale a una fila */
+    grid-template-rows: repeat(2, 50px);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.element{
+    background-color: blanchedalmond;
+}

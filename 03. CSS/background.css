@@ -1,0 +1,14 @@
+body{
+    background-color: #eee;
+}
+
+.fondo{
+    height: 450px;
+    /* background-color: blue;
+    background-image: url('https://www.eluniversal.com.mx/sites/default/files/styles/f03-651x400/public/2020/04/04/brooklyn.jpg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;*/
+    background: blue url('https://www.eluniversal.com.mx/sites/default/files/styles/f03-651x400/public/2020/04/04/brooklyn.jpg') no-repeat left top fixed;
+    background-size: cover; 
+}

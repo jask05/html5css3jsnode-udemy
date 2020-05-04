@@ -1,0 +1,32 @@
+body{
+    background-color: #eee;
+}
+
+div{
+    border: 2px dotted yellowgreen;
+    margin: 5px;
+}
+
+.grid{
+    display: grid;
+    grid-template-areas: "header header"
+                         "content sidebar"
+                         "footer footer";
+    grid-template-rows: 150px 1fr 100px;
+    grid-template-columns: 1fr 200px;
+    grid-auto-rows: 140px;
+    grid-auto-flow: row;
+    /* background-color: rgba(0,0,0,0.3); */
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.item1{
+    justify-self: center;
+    align-self: center;
+}
+
+.red{
+    background-color: crimson;
+    color: white;
+}
