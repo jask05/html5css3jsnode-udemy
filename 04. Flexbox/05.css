@@ -1,0 +1,31 @@
+
+
+.flex{
+    /* background-color: aqua; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap; /* flex-direction + flex-wrap */
+    height: 200px;
+}
+
+.primero{
+    background-color: rgba(255, 0, 0, 0.137);
+    flex-grow: 1;
+}
+
+.segundo{
+    background-color: rgba(255, 0, 0, 0.486);
+    flex-grow: 1;
+}
+
+
+
+.tercero{
+    background-color: rgba(255, 0, 140, 0.281);
+    flex-grow: 2;
+}
+
+.red{
+    background-color: brown;
+}
+

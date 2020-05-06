@@ -1,0 +1,20 @@
+body{
+    width: 200px;
+}
+
+.flex{
+    background-color: aqua;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap; /* flex-direction + flex-wrap */
+    height: 200px;
+}
+
+.quinto{
+    order: 1;
+}
+
+.red{
+    background-color: brown;
+}
+

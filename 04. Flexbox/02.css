@@ -1,0 +1,17 @@
+body{
+    width: 200px;
+}
+
+.flex{
+    background-color: aqua;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap; /* flex-direction + flex-wrap */
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.red{
+    background-color: brown;
+}
+
