@@ -26,3 +26,7 @@ Curso de Udemy en el cual se aprenderá HTML5, CSS3, JS ES9 y Node JS. [Curso](h
 - Lenguaje de marcado utilizado en la gran mayoría de los sitios webs.
 - HTML está formado por etiquetas de marcado con los caracteres **<** y **>**.
 - Con la etiqueta **<!DOCTYPE html>** se indica que se está utilizando **HTML5**.
+
+## Javascript
+
+- Para ejecutar los cambios de Node hay que ejecutar **node js/index.js**.
