@@ -28,3 +28,15 @@ ul {
     margin: 15px;
     margin-left: 38px;
 }
+
+#submit:disabled{
+    background-color: #ccc;
+}
+
+#meals-lists li {
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #eee;
+}
