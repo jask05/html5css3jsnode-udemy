@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const meals = require('./routes/meals')
 const orders = require('./routes/orders')
+const auth = require('./routes/auth')
 const app = express()
 
 app.use(bodyParser.json())
@@ -18,6 +19,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 
 app.use('/api/meals', meals)
 app.use('/api/orders', orders)
+app.use('/api/auth', auth)
 
 // app.get('*', (req, res) => {
 //     // console.log('Hola mundo. Mi primera app serverless.');
