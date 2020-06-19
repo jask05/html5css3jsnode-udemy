@@ -7,20 +7,38 @@
     <link rel="stylesheet" href="main.css" type="text/css">
 </head>
 <body>
-    <div id="meals">
-        <ul id="meals-lists">
-            <p>Cargando...</p>
-        </ul>
-        <form id="order">
-            <input type="hidden" id="meals-id">
-            <input id="submit" type="submit" disabled>
+    <div class="form-main">
+        <p class="form-title">Iniciar sesión</p>
+        <form class="login-form" id="login-form">
+            <div>
+                <p>Email</p>
+                <input type="text" id="email" placeholder="Email">
+            </div>
+            <div>
+                <p>Contraseña</p>
+                <input type="password" id="password" placeholder="Contraseña">
+            </div>
+            <div>
+                <button class="btn block">Enviar</button>
+            </div>
         </form>
     </div>
-    <div id="orders">
-        <ul id="orders-list">
-            <p>Cargando...</p>
-        </ul>
-    </div>
+    <template id="orders-view">
+        <div id="meals">
+            <ul id="meals-lists">
+                <p>Cargando...</p>
+            </ul>
+            <form id="order">
+                <input type="hidden" id="meals-id">
+                <button id="submit" disabled>Enviar</button>
+            </form>
+        </div>
+        <div id="orders">
+            <ul id="orders-list">
+                <p>Cargando...</p>
+            </ul>
+        </div>
+    </template>
 </body>
 <script src="main.js"></script>
 </html>

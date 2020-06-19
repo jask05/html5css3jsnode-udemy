@@ -1,4 +1,5 @@
 let mealsState = []
+let ruta = 'login' // login, register, orders
 
 const stringToHTML = (s) => {
     const parser = new DOMParser()
@@ -68,11 +69,8 @@ const inicializaDatos = () => {
             mealsState = data
             const mealslist = document.getElementById('meals-lists')
             const submit = document.getElementById('submit')
-            // const template = data.map(x => '<li>' + x.name + '</li>').join('')
-            // const template = data.map(renderItem).join('')
             const listItems = data.map(renderItem)
             listItems.forEach(element => mealslist.appendChild(element))
-            // mealslist.innerHTML = template
             mealslist.removeChild(mealslist.firstElementChild)
             submit.removeAttribute('disabled')
             fetch('https://serverless-jsk.jask05.vercel.app/api/orders')
@@ -89,6 +87,20 @@ const inicializaDatos = () => {
 }
 
 window.onload = () => {
-    inicializaFormulario()
-    inicializaDatos()
+    const loginForm = document.getElementById('login-form')
+    loginForm.onsubmit = (e) => {
+        e.preventDefault()
+        const email = document.getElementById('email').value
+        const password = document.getElementById('password').value
+        // fetch('http://localhost:3000/api/auth/register', {
+        fetch('http://localhost:3000/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify({ email, password })
+        })
+    }
+    // inicializaFormulario()
+    // inicializaDatos()
 }
