@@ -25,8 +25,8 @@ const renderOrder = (order, meals) => {
     return element
 }
 
-window.onload = () => {
-    const orderForm = document.getElementById('order')
+const inicializaFormulario = () => {
+        const orderForm = document.getElementById('order')
     orderForm.onsubmit = (e) => {
         e.preventDefault()
         const submit = document.getElementById('submit')
@@ -59,8 +59,10 @@ window.onload = () => {
             submit.removeAttribute('disabled')
         })
     }
+}
 
-    fetch('http://127.0.0.1:3000/api/meals')
+const inicializaDatos = () => {
+    fetch('https://serverless-jsk.jask05.vercel.app/api/meals')
         .then(response => response.json())
         .then(data => {
             mealsState = data
@@ -73,7 +75,7 @@ window.onload = () => {
             // mealslist.innerHTML = template
             mealslist.removeChild(mealslist.firstElementChild)
             submit.removeAttribute('disabled')
-            fetch('http://127.0.0.1:3000/api/orders')
+            fetch('https://serverless-jsk.jask05.vercel.app/api/orders')
                 .then(response => response.json())
                 .then(ordersData => {
                     const ordersList = document.getElementById('orders-list')
@@ -84,4 +86,9 @@ window.onload = () => {
                     // console.log(ordersData)
                 })
         })
+}
+
+window.onload = () => {
+    inicializaFormulario()
+    inicializaDatos()
 }
