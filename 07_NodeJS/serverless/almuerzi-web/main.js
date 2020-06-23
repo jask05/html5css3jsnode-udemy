@@ -27,7 +27,7 @@ const renderOrder = (order, meals) => {
 }
 
 const inicializaFormulario = () => {
-        const orderForm = document.getElementById('order')
+    const orderForm = document.getElementById('order')
     orderForm.onsubmit = (e) => {
         e.preventDefault()
         const submit = document.getElementById('submit')
@@ -43,7 +43,7 @@ const inicializaFormulario = () => {
 
         const order = {
             meal_id: mealIdValue,
-            user_id: 'chanchito triste',
+            user_id: user._id,
         }
 
         fetch('http://127.0.0.1:3000/api/orders', {
@@ -85,8 +85,28 @@ const inicializaDatos = () => {
                 })
         })
 }
+const renderApp = () => {
+    const token = localStorage.getItem('token')
+    if(token){
+        user = JSON.parse(localStorage.getItem('user'))
+        return renderOrders()
+    }
+    renderLogin()
+    // console.log('token', token)
+}
 
-window.onload = () => {
+const renderOrders = () => {
+    const ordersView = document.getElementById('orders-view')
+    document.getElementById('app').innerHTML = ordersView.innerHTML
+    inicializaFormulario()
+    inicializaDatos()
+}
+
+const renderLogin = () => {
+    const loginTemplate = document.getElementById('login-template')
+    // console.log(loginTemplate)
+    document.getElementById('app').innerHTML = loginTemplate.innerHTML
+
     const loginForm = document.getElementById('login-form')
     loginForm.onsubmit = (e) => {
         e.preventDefault()
@@ -99,8 +119,34 @@ window.onload = () => {
                 'Content-type': 'application/json',
             },
             body: JSON.stringify({ email, password })
+        }).then(x => x.json())
+        .then(respuesta => {
+            localStorage.setItem('token', respuesta.token)
+            ruta = 'orders'
+            return respuesta.token
+            // renderOrders()
+        })
+        .then(token => {
+            fetch('http://localhost:3000/api/auth/me', {
+                method: 'GET',
+                headers: {
+                    'Content-type': 'application/json',
+                    authorization: token,
+                },
+            })
+        })
+        .then( x => x.json())
+        .then(fetchedUser => {
+            localStorage.setItem('user', JSON.stringify(fetchedUser))
+            user = fetchedUser
+            renderOrders()
         })
     }
+}
+
+window.onload = () => {
+    renderApp()
+    
     // inicializaFormulario()
     // inicializaDatos()
 }
